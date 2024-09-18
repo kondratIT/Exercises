@@ -17,3 +17,16 @@ def get_float():
         except ValueError:
             print("Please Enter the float value")
     return number
+
+def get_positive_number():
+    incorrect=True
+    while incorrect:
+        try:
+            number = int(input())
+            if number>0:
+                incorrect =False
+            else:
+                print("Please Enter the positive number")
+        except ValueError:
+            print("Please Enter the positive number")
+    return number
