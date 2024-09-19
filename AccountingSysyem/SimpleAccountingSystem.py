@@ -7,15 +7,13 @@ import initial_data
 options = ["balance", "sale", "purchase", "account", "list", "warehouse", "review", "end"]
 selected_option = True
 
-main_warehouse = initial_data.init()
-#main_warehouse = initial_data.empty()
-
+main_warehouse = initial_data.empty()
+#main_warehouse = initial_data.init() #Remove # at the beginning of the line to have the warehouse filled with sample products
 
 os.system('clear')
 print(f"{main_warehouse}")
 
 def view_menu(opt:list):
-    #os.system('clear')
     for index in range(len(opt)):
         print(f"{index+1}. {opt[index]}")
         
@@ -57,7 +55,7 @@ def sale(warehouse:Warehouse_class.Warehouse):
             print("Command interrupted")
             return
         quantity = in_warehouse
-    warehouse.sale(product_name, quantity)#odjęcie z magazynu i dodanie do salda
+    warehouse.sale(product_name, quantity)
     warehouse.addCommandToList(str(f"sale : {product_name}\t{quantity}"))
     
 
